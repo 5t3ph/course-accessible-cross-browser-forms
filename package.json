@@ -1,0 +1,18 @@
+{
+  "slug": "course-accessible-cross-browser-forms",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5t3ph/course-accessible-cross-browser-forms.git"
+  },
+  "workspaces": [
+    "lessons/*"
+  ],
+  "scripts": {
+    "start": "aux() { yarn workspace:log \"$(cd lessons && ls -d *\"$1\"* | head -1)\" start; }; aux",
+    "build": "aux() { yarn workspace:log \"$(cd lessons && ls -d *\"$1\"* | head -1)\" build; }; aux",
+    "workspace:log": "aux() { echo \"Running $2 in $1.\" && yarn workspace \"$@\"; }; aux",
+    "clean:node_modules": "find . -name node_modules | xargs rm -rf",
+    "latest": "yarn upgrade-interactive --latest && yarn upgrade -L"
+  }
+}
