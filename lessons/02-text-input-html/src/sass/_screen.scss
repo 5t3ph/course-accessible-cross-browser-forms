@@ -1,0 +1,12 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-background, color("background"));
+  color: var(--color-text, color("text"));
+}
+
+header,
+main {
+  width: 60ch;
+  max-width: 100%;
+  margin: 2rem auto;
+}
