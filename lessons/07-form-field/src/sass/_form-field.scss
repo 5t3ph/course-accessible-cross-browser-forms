@@ -1,0 +1,11 @@
+.form-field {
+  border-color: var(--color-default, color("default"));
+
+  &:focus {
+    @include field-focus;
+  }
+
+  &:disabled {
+    @include field-disabled;
+  }
+}
