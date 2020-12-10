@@ -1,0 +1,15 @@
+@mixin field-focus {
+  border-color: var(--field-focus, color("primary"));
+  box-shadow: 0 0 0.35em -0.1em var(--field-focus, color("primary"));
+  outline: 2px solid transparent;
+}
+
+@mixin field-disabled {
+  border-color: var(--color-disabled-border, color("disabled"));
+  background-color: var(
+    --color-disabled-background,
+    color("disabled-background")
+  );
+  color: rgba(black, 0.45);
+  cursor: not-allowed;
+}
