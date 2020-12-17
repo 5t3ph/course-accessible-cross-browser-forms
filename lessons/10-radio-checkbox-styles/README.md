@@ -2,7 +2,7 @@
 
 ## `10-radio-checkbox-styles`
 
-We'll setup the layout structure for our custom radio button and checkbox styles using CSS grid.
+We'll setup the layout structure for our custom radio button and checkbox styles using CSS grid. These input types will share the `form-control` component styles.
 
 ## Development Scripts
 
