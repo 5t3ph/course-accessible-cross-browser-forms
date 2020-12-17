@@ -42,4 +42,28 @@
       padding-right: 0;
     }
   }
+
+  .focus {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: inherit;
+    border: 2px solid transparent;
+  }
+
+  select:focus + .focus {
+    @include field-focus;
+  }
+
+  &--disabled {
+    @include field-disabled;
+
+    background-image: linear-gradient(
+      to top,
+      rgba(black, 0.08),
+      rgba(white, 0) 33%
+    );
+  }
 }
