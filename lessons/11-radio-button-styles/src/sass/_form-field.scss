@@ -1,0 +1,69 @@
+.form-field {
+  border-color: var(--color-default, color("default"));
+
+  &:focus {
+    @include field-focus;
+  }
+
+  &:disabled {
+    @include field-disabled;
+  }
+}
+
+.form-field.select {
+  position: relative;
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  background-image: linear-gradient(
+    to top,
+    scale-color(color("white"), $lightness: -10%),
+    color("white") 33%
+  );
+
+  select,
+  &::after {
+    grid-area: select;
+  }
+
+  &:not(.select--multiple)::after {
+    content: "";
+    width: 0.8em;
+    height: 0.5em;
+    background-color: var(--color-default, color("default"));
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    justify-self: end;
+  }
+
+  select {
+    z-index: 1;
+
+    &[multiple] {
+      padding-right: 0;
+    }
+  }
+
+  .focus {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: inherit;
+    border: 2px solid transparent;
+  }
+
+  select:focus + .focus {
+    @include field-focus;
+  }
+
+  &--disabled {
+    @include field-disabled;
+
+    background-image: linear-gradient(
+      to top,
+      rgba(black, 0.08),
+      rgba(white, 0) 33%
+    );
+  }
+}

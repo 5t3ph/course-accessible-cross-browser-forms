@@ -1,0 +1,28 @@
+.form-control {
+  display: inline-grid;
+  grid-template-columns: 1em 1fr;
+  grid-gap: 0.5em;
+
+  input {
+    opacity: 0;
+    width: 1em;
+    height: 1em;
+  }
+
+  &__input {
+    display: grid;
+    grid-template-areas: "input";
+    place-content: center;
+    font-size: 1em;
+
+    > * {
+      grid-area: input;
+    }
+  }
+
+  .input__control {
+    width: 1em;
+    height: 1em;
+    border: 0.1em solid var(--color-default, color("default"));
+  }
+}
