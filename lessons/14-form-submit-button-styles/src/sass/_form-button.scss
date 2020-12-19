@@ -1,0 +1,28 @@
+.form-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: color("primary");
+  color: #fff;
+  border-radius: var(--border-radius);
+  padding: 0.25em 0.75em;
+  min-width: 10ch;
+  min-height: 44px;
+  text-align: center;
+  line-height: 1;
+  transition: 180ms all ease-in-out;
+
+  &:hover {
+    background-color: scale-color(color("primary"), $lightness: -40%);
+  }
+
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 0.05em currentColor, 0 0 0.15em 0.15em color("primary");
+  }
+
+  &:disabled {
+    @include field-disabled;
+  }
+}

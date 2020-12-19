@@ -52,3 +52,16 @@
     outline: none;
   }
 }
+
+.form-button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 1.125rem;
+  padding: 0;
+  cursor: pointer;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentColor;
+  }
+}
