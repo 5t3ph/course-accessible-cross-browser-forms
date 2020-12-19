@@ -1,0 +1,88 @@
+.form-control {
+  display: inline-grid;
+  grid-template-columns: 1em 1fr;
+  grid-gap: 0.5em;
+
+  input {
+    opacity: 0;
+    width: 1em;
+    height: 1em;
+
+    &:focus + .input__control {
+      box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.15em color("primary");
+    }
+  }
+
+  &__input {
+    display: grid;
+    grid-template-areas: "input";
+    place-content: center;
+    font-size: 1em;
+
+    > * {
+      grid-area: input;
+    }
+  }
+
+  .input__control {
+    display: grid;
+    place-content: center;
+    width: 1em;
+    height: 1em;
+    border: 0.1em solid var(--color-default, color("default"));
+  }
+
+  &:focus-within {
+    color: var(--color-primary, color("primary"));
+  }
+
+  &.form-control--disabled {
+    color: rgba(black, 0.45);
+
+    .input__control {
+      @include field-disabled;
+    }
+  }
+}
+
+.radio {
+  .input__control {
+    border-radius: 50%;
+  }
+
+  .input__control::before {
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    box-shadow: inset 1em 1em var(--color-primary, color("primary"));
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 180ms transform ease-in-out;
+  }
+
+  input:checked + .input__control::before {
+    transform: scale(1);
+  }
+
+  &.form-control--disabled .input__control::before {
+    box-shadow: inset 1em 1em rgba(black, 0.45);
+  }
+}
+
+.checkbox {
+  .input__control {
+    border-radius: var(--border-radius);
+    color: var(--color-primary, color("primary"));
+  }
+
+  .input__control svg {
+    width: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    transform-origin: bottom left;
+  }
+
+  input:checked + .input__control svg {
+    transform: scale(1);
+  }
+}
