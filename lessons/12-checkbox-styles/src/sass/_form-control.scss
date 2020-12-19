@@ -1,0 +1,50 @@
+.form-control {
+  display: inline-grid;
+  grid-template-columns: 1em 1fr;
+  grid-gap: 0.5em;
+
+  input {
+    opacity: 0;
+    width: 1em;
+    height: 1em;
+  }
+
+  &__input {
+    display: grid;
+    grid-template-areas: "input";
+    place-content: center;
+    font-size: 1em;
+
+    > * {
+      grid-area: input;
+    }
+  }
+
+  .input__control {
+    display: grid;
+    place-content: center;
+    width: 1em;
+    height: 1em;
+    border: 0.1em solid var(--color-default, color("default"));
+  }
+}
+
+.radio {
+  .input__control {
+    border-radius: 50%;
+  }
+
+  .input__control::before {
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    box-shadow: inset 1em 1em var(--color-primary, color("primary"));
+    border-radius: 50%;
+    transition: 180ms transform ease-in-out;
+    transform: scale(0);
+  }
+
+  input:checked + .input__control::before {
+    transform: scale(1);
+  }
+}
