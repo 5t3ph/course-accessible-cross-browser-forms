@@ -1,0 +1,29 @@
+---
+title: Fieldset Demo
+---
+
+<fieldset>
+  <legend>Address</legend>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="street-address">Street Address</label>
+      <input aria-describedby="street-address-description" class="form-field" id="street-address" name="street-address" type="text" />
+      <span class="field-description" id="street-address-description">Example: 123 Sesame Street, #456</span>
+    </div>
+  </div>
+  <div class="form-row form-row--mixed">
+    <div class="form-group">
+      <label for="city">City</label>
+      <input class="form-field" id="city" name="city" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <input class="form-field" id="state" name="state" type="text" />
+    </div>
+    <div class="form-group form-group--width-auto" style="--field-width: 10ch;">
+      <label for="zip">Zip</label>
+      <input aria-describedby="zip-description" class="form-field" id="zip" name="zip" type="text" />
+      <span class="field-description" id="zip-description">5 digits</span>
+    </div>
+  </div>
+</fieldset>

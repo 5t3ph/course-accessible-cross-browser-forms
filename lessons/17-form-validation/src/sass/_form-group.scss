@@ -1,0 +1,19 @@
+.form-group {
+  & + .form-group {
+    margin-top: 1.5em;
+  }
+
+  label {
+    font-size: 1.15em;
+    font-weight: 500;
+    line-height: 1;
+
+    &:not(.form-control) {
+      display: block;
+    }
+
+    & + .form-field {
+      margin-top: 0.5em;
+    }
+  }
+}

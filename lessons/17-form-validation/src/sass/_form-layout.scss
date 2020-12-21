@@ -1,0 +1,61 @@
+legend {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.65em;
+}
+
+fieldset + fieldset {
+  margin-top: 2rem;
+}
+
+.form-row {
+  --field-col-width: 20ch;
+
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(var(--field-col-width), 1fr));
+
+  .form-group {
+    margin: 0;
+  }
+
+  .form-field {
+    width: 100%;
+  }
+
+  & + .form-row {
+    margin-top: 2rem;
+  }
+
+  &--mixed {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    // For non `gap` support
+    // margin-left: -0.25rem;
+    // margin-right: -0.25rem;
+
+    .form-group {
+      flex: 1 1 var(--field-col-width);
+
+      // For non `gap` support
+      // margin: 0.25rem;
+
+      &--width-auto {
+        flex: 0 1 auto;
+
+        .form-field,
+        .form-control {
+          max-width: var(--field-width, 0);
+        }
+      }
+    }
+  }
+
+  &--variable {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+}
