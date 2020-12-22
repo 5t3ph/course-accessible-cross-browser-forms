@@ -28,6 +28,11 @@ $colors: (
   @return map-get($colors, $key);
 }
 
+// Function to return a color formatted for use in an SVG
+@function svgColor($color) {
+  @return "%23" + str-slice("#{color($color)}", 2, -1);
+}
+
 // Additional variables
 $border-radius: 0.25em !default;
 
